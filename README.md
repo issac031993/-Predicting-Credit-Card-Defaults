@@ -63,8 +63,8 @@ The final recommended model was an **ensemble-based Random Forest**, chosen for 
 ![Correlation Heatmap](https://github.com/user-attachments/assets/c48a67f7-5774-4db4-8b06-b4710c444818)
 Heatmap showing feature correlations
 
-![Pair Plot](images/pairplot.png)
-*Example: Pairplot of selected features*
+![Pair Plot](https://github.com/user-attachments/assets/0e79bacf-fd2a-49c0-8460-69252e50f890)
+Pairplot of selected features
 
 ![Regression Results](images/regression_plot.png)
 *Example: Regression fit plot showing model predictions vs actuals*
