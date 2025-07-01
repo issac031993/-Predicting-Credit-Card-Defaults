@@ -60,7 +60,7 @@ The final recommended model was an **ensemble-based Random Forest**, chosen for 
 
 ## 📈 Sample Visualizations
 
-![Correlation Heatmap](images/correlation_heatmap.png)
+![Correlation Heatmap]([images/correlation_heatmap.png](https://github.com/issac031993/-Predicting-Credit-Card-Defaults/issues/2#issue-3194048960))
 *Example: Heatmap showing feature correlations*
 
 ![Pair Plot](images/pairplot.png)
