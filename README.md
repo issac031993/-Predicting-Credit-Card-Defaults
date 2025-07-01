@@ -60,9 +60,8 @@ The final recommended model was an **ensemble-based Random Forest**, chosen for 
 
 ## 📈 Sample Visualizations
 
-![Correlation Heatmap]([![Image](https://github.com/user-attachments/assets/c48a67f7-5774-4db4-8b06-b4710c444818)]
-![Image](https://github.com/user-attachments/assets/c48a67f7-5774-4db4-8b06-b4710c444818)
-*Example: Heatmap showing feature correlations*
+![Correlation Heatmap](https://github.com/user-attachments/assets/c48a67f7-5774-4db4-8b06-b4710c444818)
+Heatmap showing feature correlations
 
 ![Pair Plot](images/pairplot.png)
 *Example: Pairplot of selected features*
