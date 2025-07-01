@@ -1,100 +1,81 @@
-# -Predicting-Credit-Card-Defaults
-Built and evaluated supervised learning models (Random Forest, Logistic Regression, SVM) to predict loan defaults, with a focus on minimizing false negatives. Recommended ensemble-based Random Forest for robust, high-recall performance in credit risk modeling.
-# 📊 Predicting Credit Card Defaults
+# 🏦 Predicting Credit Card Defaults: A Supervised Learning Approach
+
+👋 **Hi, I'm Issac Abraham.**  
+This project was independently designed and executed by me as a capstone, applying machine learning to tackle a real-world financial risk problem.
+
+---
 
 ## 🔍 Project Overview
-This project explores predictive modelling techniques to forecast system resource usage (or financial risk / defaults in your adjusted case).
-We built and compared multiple supervised learning models (Random Forest, Logistic Regression, SVM) to minimize **false negatives**, a key metric in credit risk prediction.
-
-The final recommended model was an **ensemble-based Random Forest**, chosen for its robust, high-recall performance.
+Credit card companies face substantial risk from customer defaults. This project builds predictive models to identify customers likely to default, enabling proactive risk management and protecting financial stability.
 
 ---
 
-## 🗂️ Dataset
-- **Source:** Historical system activity dataset (or financial transaction dataset if renamed for credit card defaults).
-- **Records:** ~8,192 rows, 23 columns
-- **Target Variable:**  
-  - `usr`: Portion of time (%) CPUs run in user mode *(analogous to default flag for financial dataset)*
+## 🗂️ Dataset Highlights
+- **Rows:** ~100,000 customers
+- **Columns:** 36 features including account activity, repayment patterns, merchant categories, and age.
+- **Target:** `default` (1 = defaulted, 0 = did not default).
 
-**Features included:**
-- Reads, writes, system calls
-- Page ins, page outs
-- Memory and swap metrics
-- Process run queue size, free memory, etc.
+The dataset was highly imbalanced (88,688 non-default vs. 1,288 default), so careful upsampling was used to balance classes for effective learning.
 
 ---
 
-## 🚀 Process & Methodology
-- **Data Preprocessing:**
-  - Imputed missing values (mean strategy).
-  - Removed duplicates.
-  - Handled outliers via boxplots & IQR filtering.
+## 🚀 Exploratory Data Analysis & Preprocessing
+✅ Dropped irrelevant columns (`userid`, `name_in_email`, `time_hours`) to streamline the model.  
+✅ Handled missing values by removal or imputation to ensure data integrity.  
+✅ Used MinMaxScaler to normalize numerical features.  
+✅ Label encoded categorical variables.
 
-- **Exploratory Data Analysis:**
-  - Generated correlation matrices & heatmaps.
-  - Created pairplots to inspect feature relationships.
+### 📊 Key Visuals from EDA
+![Age Histogram](images/histogram_age.png)
+![Default Status Histogram](images/histogram_default.png)
+![Correlation Heatmap](images/correlation_heatmap.png)
+![Boxplot Recovery Debt](images/boxplot_recovery.png)
+![ROC Curve](images/roc_curve.png)
 
-- **Feature Engineering:**
-  - One-hot encoded categorical variables.
-  - Calculated Variance Inflation Factors (VIF) to handle multicollinearity.
-
-- **Modeling:**
-  - Built multiple linear regression models, iteratively removing high-VIF variables.
-  - Compared adjusted R² and RMSE across models.
-  - Evaluated on a 70:30 train-test split.
+Business insight: Features like **`acct_days_in_rem_12_24m`**, `recovery_debt`, and account activity status had strong influence on defaults.
 
 ---
 
-## 🏆 Results & Insights
-- **Best Model:** Initial OLS regression with all features  
-  - Adjusted R²: **0.793**  
-  - RMSE: **4.45 (train)**, **4.66 (test)**
-- Dropping high-VIF features reduced performance, highlighting their predictive contribution.
-- Key influential features included:
-  - `lread`, `lwrite`, `scall`, `sread` — strongly linked to CPU user mode.
+## 🧠 Machine Learning Models & Results
+Focused on **maximizing recall** to minimize false negatives (missing potential defaulters).
 
-**Business Implications:**
-- Even a simpler model captured ~79% of variance, enabling resource allocation planning and potential cost savings.
+| Model                          | Accuracy | Precision | Recall | F1-Score |
+|---------------------------------|----------|-----------|--------|----------|
+| Logistic Regression             | 98.97%   | 1.00/0.98 | 0.98/1.00 | 0.99 |
+| Random Forest                   | 100%     | 1.00      | 1.00   | 1.00 |
+| SVM                             | 95.68%   | 1.00/0.92 | 0.91/1.00 | 0.96 |
+| LDA                             | 96.76%   | 1.00/0.94 | 0.93/1.00 | 0.97 |
+| **Boosted Logistic Regression** | 99.95%   | 1.00      | 1.00   | 1.00 |
+| **Tuned Random Forest**         | 100%     | 1.00      | 1.00   | 1.00 |
 
----
-
-## 📈 Sample Visualizations
-
-![Correlation Heatmap](https://github.com/user-attachments/assets/c48a67f7-5774-4db4-8b06-b4710c444818)
-Heatmap showing feature correlations
-
-![Pair Plot](https://github.com/user-attachments/assets/0e79bacf-fd2a-49c0-8460-69252e50f890)
-Pairplot of selected features
-
-![Regression Results](images/regression_plot.png)
-*Example: Regression fit plot showing model predictions vs actuals*
+✅ **Best model:** Tuned Random Forest (via GridSearchCV) achieved **perfect classification on test data**, catching **all defaults (recall = 1.0)** — critical for financial risk management.
 
 ---
 
-## 🛠️ Tech Stack
-- **Python**: pandas, numpy, seaborn, matplotlib, scikit-learn, statsmodels
-- **Jupyter Notebooks** for experimentation
-- **Excel** for raw data storage
+## 💼 Business Value & Recommendations
+- Helps credit card companies **identify high-risk customers early**, reducing losses.
+- Allows **dynamic credit limits & tailored financial guidance** for at-risk customers.
+- Builds **trust in the financial ecosystem** by promoting responsible lending.
 
 ---
 
 ## ⚙️ How to Run
-1. Clone the repo:
-   ```
-   git clone https://github.com/yourusername/Predicting-Credit-Card-Defaults.git
-   cd Predicting-Credit-Card-Defaults
-   ```
-2. Install dependencies (you can create `requirements.txt`):
-   ```
-   pip install -r requirements.txt
-   ```
-3. Open and run the notebook:
-   ```
-   jupyter notebook analysis.ipynb
-   ```
+📌 This repository includes Jupyter notebooks with the complete workflow.
+- Clone the repo, install the packages (`pip install -r requirements.txt`), and explore the notebooks.
 
 ---
 
-## 💡 Future Work
-- Explore ensemble techniques like Gradient Boosting or XGBoost for potentially higher recall.
-- Implement hyperparameter tuning (GridSearchCV) to improve model generalization.
+## 🛠️ Tech Stack
+- **Python:** pandas, numpy, seaborn, matplotlib, scikit-learn
+- **Jupyter Notebook** for iterative data science workflows
+
+---
+
+## 🤝 About Me
+I completed this project entirely on my own, showcasing my ability to handle everything from data wrangling and EDA to advanced machine learning tuning and interpretation.
+
+🔗 [LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
+
+✅ **Thank you for checking out my project!**
