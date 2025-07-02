@@ -39,7 +39,7 @@ The dataset was highly imbalanced (88,688 non-default vs. 1,288 default), so car
 
 ### 📊 Key Visuals from EDA
 ![Histogram of Age vs Frequency](https://github.com/user-attachments/assets/895fcf45-2273-4361-be05-fc0ee260d844)
-![Default Status Histogram](images/histogram_default.png)
+![Histogram of Default vs Not Default Status](https://github.com/user-attachments/assets/7da54b9b-2dcc-4fed-9163-bdf220998775)
 ![Correlation Heatmap](images/correlation_heatmap.png)
 ![Boxplot Recovery Debt](images/boxplot_recovery.png)
 ![ROC Curve](images/roc_curve.png)
