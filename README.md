@@ -1,10 +1,22 @@
-# 🏦 Predicting Credit Card Defaults: A Supervised Learning Approach
+# 🏦 Predicting Credit Card Defaults: A Supervised Learning Approach for Risk Assessment and Management
 
-👋 **Hi, I'm Issac Abraham.**  
-This project was independently designed and executed by me as a capstone, applying machine learning to tackle a real-world financial risk problem.
+This project develops and evaluates predictive models for credit card defaults, with a focus on achieving **high recall** to minimize false negatives — critical for effective risk management.  
+Models explored include **Logistic Regression, Random Forest, SVM, and LDA**. The **Random Forest model demonstrated perfect initial performance**, and boosted & bagged ensembles were also assessed to ensure robustness.  
+Final recommendations include adopting Random Forest, implementing regular monitoring, exploring ensemble methods for additional resilience, and balancing model interpretability to support informed decision-making. This ultimately helps enhance **operational efficiency and financial stability**.
 
 ---
 
+## 🚀 Skills & Tools Covered
+- 🔥 **Random Forest**, Logistic Regression, SVM, LDA
+- 📊 **Classification & Ensemble Techniques**
+- 🧠 **Machine Learning**
+- 🕵️ **Exploratory Data Analysis (EDA)**
+- 🐍 Python (pandas, numpy, seaborn, matplotlib, scikit-learn)
+
+---
+
+
+---
 ## 🔍 Project Overview
 Credit card companies face substantial risk from customer defaults. This project builds predictive models to identify customers likely to default, enabling proactive risk management and protecting financial stability.
 
