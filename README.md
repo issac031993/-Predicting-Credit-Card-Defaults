@@ -40,9 +40,9 @@ The dataset was highly imbalanced (88,688 non-default vs. 1,288 default), so car
 ### 📊 Key Visuals from EDA
 ![Histogram of Age vs Frequency](https://github.com/user-attachments/assets/895fcf45-2273-4361-be05-fc0ee260d844)
 ![Histogram of Default vs Not Default Status](https://github.com/user-attachments/assets/7da54b9b-2dcc-4fed-9163-bdf220998775)
-![Correlation Heatmap](images/correlation_heatmap.png)
-![Boxplot Recovery Debt](images/boxplot_recovery.png)
-![ROC Curve](images/roc_curve.png)
+![Correlation Heatmap](https://github.com/user-attachments/assets/101f1d19-6084-4d43-8e51-f461b3850485)
+![Stacked bar chart of Merchant group vs Default Status](https://github.com/user-attachments/assets/7649a902-f267-4d52-9899-db72197f42d7)
+![Boxplot of Recovery Debt vs Default Status](https://github.com/user-attachments/assets/aa648681-ae98-48bd-9b50-918d62450b06)
 
 Business insight: Features like **`acct_days_in_rem_12_24m`**, `recovery_debt`, and account activity status had strong influence on defaults.
 
@@ -61,6 +61,8 @@ Focused on **maximizing recall** to minimize false negatives (missing potential 
 | **Tuned Random Forest**         | 100%     | 1.00      | 1.00   | 1.00 |
 
 ✅ **Best model:** Tuned Random Forest (via GridSearchCV) achieved **perfect classification on test data**, catching **all defaults (recall = 1.0)** — critical for financial risk management.
+![Confusion matrix for the Best Model](https://github.com/user-attachments/assets/d29e30a2-9f25-49c4-9c0b-ff1f2102b19c)
+![Roc Curve for the best model(Tuned Random forest)](https://github.com/user-attachments/assets/ad420a61-3dfe-4b67-afa6-2df13154e297)
 
 ---
 
