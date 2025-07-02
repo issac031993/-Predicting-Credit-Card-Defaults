@@ -38,7 +38,7 @@ The dataset was highly imbalanced (88,688 non-default vs. 1,288 default), so car
 ✅ Label encoded categorical variables.
 
 ### 📊 Key Visuals from EDA
-![Age Histogram](images/histogram_age.png)
+![Histogram of Age vs Frequency](https://github.com/user-attachments/assets/895fcf45-2273-4361-be05-fc0ee260d844)
 ![Default Status Histogram](images/histogram_default.png)
 ![Correlation Heatmap](images/correlation_heatmap.png)
 ![Boxplot Recovery Debt](images/boxplot_recovery.png)
